@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "make-model": "npx sequelize-cli model:generate --name Cart --attributes name:string",
-    "make-seed": "npx sequelize-cli seed:generate --name demo-cart",
+    "make-model": "npx sequelize-cli model:generate --name Coupons --attributes name:string",
+    "make-seed": "npx sequelize-cli seed:generate --name Carts",
     "save-seed": "npx sequelize-cli db:seed:all",
     "undo-seed": "npx sequelize-cli db:seed:undo",
     "migrate": "npx sequelize-cli db:migrate",

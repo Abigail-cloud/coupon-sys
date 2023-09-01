@@ -11,9 +11,6 @@ app.get('/', (req, res)=>{
 })
 
 
-
-
-
 app.use(express.json())
 
 
@@ -21,7 +18,7 @@ app.use(express.json())
 app.use('/api/v1', cartRouter)
 
 app.listen(port, () => {
-    console.log( `Server running in ${process.env.DB_HOST} mode on, port ${port}`);
+    console.log( `Server running in ${process.env.DB_HOST} mode on: port ${port}`);
 })
 
 console.log(process.env.DB_HOST);

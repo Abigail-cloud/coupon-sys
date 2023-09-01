@@ -1,8 +1,9 @@
-const express = require('express')
+const express = require('express');
 const route = express.Router();
-const {getSingleCart} = require('../controllers/cart.controller')
+const {getCart }= require('../controllers/cart_module')
 
-route.get('/cart', getSingleCart)
+route.get('/cart', getCart)
+
 
 
 module.exports = route;
