@@ -3,7 +3,8 @@ const app = express();
 const dotenv= require('dotenv')
 dotenv.config()
 const port= process.env.PORT
-const cartRouter = require('./routes/cartRoutes')
+const cartRouter = require('./routes/cartRoutes');
+const couponRouter = require('./routes/cartRoutes')
 
 
 app.get('/', (req, res)=>{
@@ -15,7 +16,8 @@ app.use(express.json())
 
 
 //Route
-app.use('/api/v1', cartRouter)
+app.use('/api/v1', cartRouter);
+app.use('/api/v1', couponRouter);
 
 app.listen(port, () => {
     console.log( `Server running in ${process.env.DB_HOST} mode on: port ${port}`);
