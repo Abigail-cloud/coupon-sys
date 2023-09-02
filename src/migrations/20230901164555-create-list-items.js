@@ -2,29 +2,18 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Coupons', {
+    await queryInterface.createTable('ListItems', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      couponCode: {
+      name: {
         type: Sequelize.STRING,
-        allowNull: false,
-        unique: true,
       },
-       cartItems: {
-        type: Sequelize.JSON,
-        allowNull: false,
-      },
-      totalPrice: {
+      price: {
         type: Sequelize.FLOAT,
-        allowNull: false,
-      },
-      discountedTotalPrice: {
-        type: Sequelize.FLOAT,
-        allowNull: false,
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +26,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Coupons');
+    await queryInterface.dropTable('ListItems');
   }
 };

@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "make-model": "npx sequelize-cli model:generate --name Coupons --attributes name:string",
+    "make-model": "npx sequelize-cli model:generate --name ListItems --attributes name:string",
     "make-seed": "npx sequelize-cli seed:generate --name Carts",
     "save-seed": "npx sequelize-cli db:seed:all",
     "undo-seed": "npx sequelize-cli db:seed:undo",
     "migrate": "npx sequelize-cli db:migrate",
     "down": "npx sequelize-cli db:migrate:undo",
+    "revert-single": "npx sequelize-cli db:migrate:undo --name 20230830162016-create-coupons",
     "dev": "nodemon app.js"
   },
   "keywords": [],

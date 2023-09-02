@@ -17,7 +17,7 @@ app.use(express.json())
 
 //Route
 app.use('/api/v1', cartRouter);
-app.use('/api/v1', couponRouter);
+
 
 app.listen(port, () => {
     console.log( `Server running in ${process.env.DB_HOST} mode on: port ${port}`);
