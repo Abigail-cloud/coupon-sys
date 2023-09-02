@@ -77,17 +77,18 @@ const applyCoupon = async (req, res) => {
         .status(400)
         .json({ error: 'Cart total price is too low for this coupon!!' });
     }
+    let discountAmount = 0;
 
       if (coupon.type === 'fixed') {
         discountAmount = coupon.value;
-      } else if (coupon.type === 'percent' ) {
+      } else if (coupon.type === 'percent' || Carts.length >= 2) {
         discountAmount = (coupon.value / 100) * totalPrice;
-      } else if (coupon.type === 'mixed') {
+      } else if (coupon.type === 'mixed' || Carts.length >= 3) {
         discountAmount = Math.max(
           coupon.value,
           (coupon.value / 100) * totalPrice
         );
-      } else if (coupon.type === 'rejected' ) {
+      } else if (coupon.type === 'rejected') {
         discountAmount =  (minimumItemPrice - coupon.value) +
           (coupon.value / 100) * totalPrice
       }
